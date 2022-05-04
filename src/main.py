@@ -67,5 +67,6 @@ async def post_run():
 
 
 if __name__ == '__main__':
-    # asyncio.run(main())
+
+    load_env()
     app.run(host='0.0.0.0', port=5002)
