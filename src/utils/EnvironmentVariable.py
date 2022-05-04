@@ -25,6 +25,20 @@ class EnvironmentVariables:
         self.stack_size_limit = os.getenv('STACK_SIZE_LIMIT')
         self.process_count_limit = os.getenv('PROCESS_COUNT_LIMIT')
         self.storage_size_limit = os.getenv('STORAGE_SIZE_LIMIT')
+        self.check_valid_env()
+
+    def check_valid_env(self):
+        if self.run_time_limit is None:
+            raise Exception('Env error : RUN_TIME_LIMIT not found')
+        if self.wall_time_limit is None:
+            raise Exception('Env error : WALL_TIME_LIMIT not found')
+        if self.stack_size_limit is None:
+            raise Exception('Env error : STACK_SIZE_LIMIT not found')
+        if self.process_count_limit is None:
+            raise Exception('Env error : PROCESS_COUNT_LIMIT not found')
+        if self.storage_size_limit is None:
+            raise Exception('Env error : STORAGE_SIZE_LIMIT not found')
+
 
     def get_run_time_limit(self):
         return self.run_time_limit
