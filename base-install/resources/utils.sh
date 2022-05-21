@@ -3,7 +3,8 @@
 set -xe
 
 apt-get update -y
+apt-get install -y apt-transport-https
 apt-get upgrade -y
-apt-get install -y --no-install-recommends apt-transport-https git make build-essential libcap-dev
+apt-get install -y git make build-essential libcap-dev
 
-rm -rf /var/lib/apt/lists/*
+# rm -rf /var/lib/apt/lists/*
