@@ -7,5 +7,5 @@ COPY .env.exemple .env
 
 EXPOSE 5002
 
-#CMD ['-m', 'src.main']
-#ENTRYPOINT ['python3']
+CMD ["-m", "src.main"]
+ENTRYPOINT ["python3"]
