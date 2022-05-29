@@ -25,6 +25,7 @@ class EnvironmentVariables:
         self.stack_size_limit = os.getenv('STACK_SIZE_LIMIT')
         self.process_count_limit = os.getenv('PROCESS_COUNT_LIMIT')
         self.storage_size_limit = os.getenv('STORAGE_SIZE_LIMIT')
+        self.memory_limit = os.getenv('MEMORY_LIMIT')
         self.check_valid_env()
 
     def check_valid_env(self):
@@ -38,7 +39,8 @@ class EnvironmentVariables:
             raise Exception('Env error : PROCESS_COUNT_LIMIT not found')
         if self.storage_size_limit is None:
             raise Exception('Env error : STORAGE_SIZE_LIMIT not found')
-
+        if self.memory_limit is None:
+            raise Exception('Env error : MEMORY_LIMIT not found')
 
     def get_run_time_limit(self):
         return self.run_time_limit
@@ -54,6 +56,9 @@ class EnvironmentVariables:
 
     def get_storage_size_limit(self):
         return self.storage_size_limit
+
+    def get_memory_limit(self):
+        return self.memory_limit
 
 
 class EnvironmentVariablesEncoder(JSONEncoder):

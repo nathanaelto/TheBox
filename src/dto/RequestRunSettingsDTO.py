@@ -10,3 +10,4 @@ class RequestRunSettingsDTO:
     stack_size_limit: str = None
     process_count_limit: str = None
     storage_size_limit: str = None
+    memory_limit: str = None
