@@ -27,6 +27,7 @@ class Box:
             "-k {}".format(env.get_stack_size_limit()),
             "-p{}".format(env.get_process_count_limit()),
             "-f {}".format(env.get_storage_size_limit()),
+            "--cg-mem=512000",
             "-e"
         ]
 
