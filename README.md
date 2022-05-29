@@ -30,7 +30,11 @@ cd ..
 
 docker build . -t the-box
 
+# discret mode
 docker run --privileged -d -p 5002:5002 --name runner the-box 
+
+# interactive mode
+docker run --privileged -it -p 5002:5002 --name runner the-box 
 ```
 
 ## Fonctionnement : in progress:
@@ -53,7 +57,8 @@ docker run --privileged -d -p 5002:5002 --name runner the-box
     "wall_time_limit": "10",
     "stack_size_limit": "128000",
     "process_count_limit": "120",
-    "storage_size_limit": "10240"
+    "storage_size_limit": "10240",
+    "memory_limit": "512000"
   },
   "files": "files to need for steps zipped and encoded in base64"
 }
