@@ -43,7 +43,8 @@ class Box:
 
     def write_script(self, directory, data, uuid_id):
         filename = 'script-{}.sh'.format(uuid_id)
-        self.write_file_in_box(directory, filename, decode_base64(data))
+        # self.write_file_in_box(directory, filename, decode_base64(data))
+        self.write_file_in_box(directory, filename, data)
         return filename
 
     def write_files_zipped(self, file_to_unzip, directory):
