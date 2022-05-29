@@ -17,6 +17,20 @@ pip3 install flask
 pip3 install dataclasses_json
 pip3 install "Flask[async]"
 pip3 install httpx
+pip3 install asgiref
+```
+
+## Docker :
+```shell
+cd base-install
+
+docker build . -t the-box-base
+
+cd ..
+
+docker build . -t the-box
+
+docker run --privileged -it -p 5002:5002 the-box
 ```
 
 ## Fonctionnement : in progress:
