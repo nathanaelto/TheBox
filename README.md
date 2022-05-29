@@ -30,7 +30,7 @@ cd ..
 
 docker build . -t the-box
 
-docker run --privileged -it -p 5002:5002 the-box
+docker run --privileged -d -p 5002:5002 --name runner the-box 
 ```
 
 ## Fonctionnement : in progress:
