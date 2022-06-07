@@ -9,5 +9,6 @@ RUN rm -rf resources
 
 COPY langagues langagues
 RUN bash langagues/python.sh
+RUN bash langagues/node.sh
 
 RUN rm -rf langagues
