@@ -37,6 +37,11 @@ docker run --privileged -d -p 5002:5002 --restart=always --name runner the-box
 docker run --privileged -it -p 5002:5002 --name runner the-box 
 ```
 
+```shell
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+```
+
 ## Fonctionnement : in progress:
 
 ### Input json :
