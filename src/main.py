@@ -17,10 +17,10 @@ async def post_run():
     body = request.get_data()
     request_run_dto = RequestRunDTO.from_json(body)
     box_id = await isolate.init_box(request=request_run_dto)
-    res = await isolate.run_steps(box_id=box_id, steps=request_run_dto.steps)
-    await isolate.delete_box(box_id=box_id)
-    return jsonify(res)
-
+    # res = await isolate.run_steps(box_id=box_id, steps=request_run_dto.steps)
+    # await isolate.delete_box(box_id=box_id)
+    # return jsonify(res)
+    return {}
 
 if __name__ == '__main__':
 

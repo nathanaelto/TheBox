@@ -70,13 +70,16 @@ class Isolate:
             raise Exception('Fail to create Sandbox')
         work_dir = out.strip()
         box = Box.init_box(box_id=box_id_str, workdir=work_dir)
-        if request.settings is None:
-            box.default_exec_settings()
-        else:
-            box.set_exec_settings(request.settings)
+        box.default_exec_settings()
 
         zipped_file_path = box.write_file_in_box('', 'file.zip', decode_base64(request.files), True)
         box.write_files_zipped(zipped_file_path, 'box')
+
+        code_file_in_box = box.write_file_in_box('code', 'app.py', request.code)
+        test_file_in_box = box.write_file_in_box('code', 'test.py', request.test)
+
+        print(code_file_in_box)
+        print(test_file_in_box)
 
         self.boxes[box_id_str] = box
         print('New box id : {} are up'.format(box_id_str))
