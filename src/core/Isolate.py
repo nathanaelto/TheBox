@@ -72,8 +72,8 @@ class Isolate:
         box = Box.init_box(box_id=box_id_str, workdir=work_dir)
         box.default_exec_settings()
 
-        zipped_file_path = box.write_file_in_box('', 'file.zip', decode_base64(request.files), True)
-        box.write_files_zipped(zipped_file_path, 'box')
+        # zipped_file_path = box.write_file_in_box('', 'file.zip', decode_base64(request.files), True)
+        # box.write_files_zipped(zipped_file_path, 'box')
 
         code_file_in_box = box.write_file_in_box('code', 'app.py', request.code)
         test_file_in_box = box.write_file_in_box('code', 'test.py', request.test)
