@@ -32,4 +32,4 @@ async def post_run():
 
 if __name__ == '__main__':
     load_env()
-    app.run(host='0.0.0.0', port=5002, ssl_context=("/etc/letsencrypt/live/thebox.nathabox.fr/fullchain.pem", "/etc/letsencrypt/live/thebox.nathabox.fr/privkey.pem"))
+    app.run(host='0.0.0.0', port=5002, ssl_context="adhoc")
