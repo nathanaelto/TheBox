@@ -5,7 +5,7 @@ WORKDIR /app
 COPY src src
 COPY .env.exemple .env
 
-VOLUME /etc/letsencrypt:/etc/letsencrypt
+VOLUME /etc/letsencrypt/:/etc/letsencrypt/
 
 EXPOSE 80
 EXPOSE 443
