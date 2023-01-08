@@ -14,4 +14,6 @@ pip3 install uuid \
     "Flask[async]" \
     httpx \
     asgiref \
-    pytest
+    pytest \
+    flask-talisman \
+    gunicorn
