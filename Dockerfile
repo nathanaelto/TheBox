@@ -5,11 +5,7 @@ WORKDIR /app
 COPY src src
 COPY .env.exemple .env
 
-VOLUME /etc/letsencrypt/:/etc/letsencrypt/
-
-EXPOSE 80
 EXPOSE 443
 
-#CMD ["-m", "src.main", "gunicorn", "-w", "4", "-b", "0.0.0.0:5002", "--certfile", "/etc/letsencrypt/live/thebox.nathabox.fr/fullchain.pem", "--keyfile", "/etc/letsencrypt/live/thebox.nathabox.fr/privkey.pem", "--timeout", "120"]
 CMD ["-m", "src.main"]
 ENTRYPOINT ["python3"]

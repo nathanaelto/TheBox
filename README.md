@@ -31,7 +31,12 @@ cd ..
 docker build . -t the-box
 
 # discret mode
-docker run --privileged -d -p 5002:5002 --restart=always --name runner the-box 
+# HTTP
+docker run --privileged -d -p 5002:5002 --restart=always --name runner the-box
+
+# HTTPS 
+docker run --privileged -d -p 443:5000 -v /etc/letsencrypt:/etc/letsencrypt --restart=always --name runner the-box
+
 
 # interactive mode
 docker run --privileged -it -p 5002:5002 --name runner the-box 
