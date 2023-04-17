@@ -12,6 +12,11 @@ def load_env():
     EnvironmentVariables()
 
 
+@app.get('/')
+def default():
+    return jsonify({'message': 'TheBox API'})
+
+
 @app.route('/run', methods=['POST'])
 async def post_run():
     body = request.get_data()
