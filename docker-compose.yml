@@ -1,7 +1,7 @@
 version: "3"
 services:
   runner:
-    hostname: the-box
+    hostname: runner
     build: .
     ports:
       - "5002:5002"
